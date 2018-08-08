@@ -5,8 +5,9 @@ const globalVariables = _.pick(global, ['browser', 'expect']);
 
 // puppeteer options
 const opts = {
-  headless: false,
-  slowMo: 100,
+  headless: true,
+  // slowMo: 20,
+  ignoreHTTPSErrors: true,
   timeout: 10000
 };
 
@@ -14,6 +15,7 @@ const opts = {
 before(async () => {
   global.expect = expect;
   global.browser = await puppeteer.launch(opts);
+  global.page = await browser.newPage();
 });
 
 // close browser and reset global variables

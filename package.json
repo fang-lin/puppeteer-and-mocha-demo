@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test": "mocha test/tests.js --recursive test",
+    "test": "mocha test/tests.js --recursive --timeout 10000 test",
     "server": "http-server src -p 8080"
   },
   "dependencies": {
