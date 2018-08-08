@@ -17,7 +17,7 @@ module.exports = ({ answer }) => {
     const value = await page.$eval('#answer-1', input => input.value);
     expect(value).to.equal(answer);
     await page.screenshot({
-      path: `screenshots/question-1.plot.png`,
+      path: `screenshots/question-1(${answer}).plot.png`,
       fullPage: true
     });
   });

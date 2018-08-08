@@ -6,6 +6,6 @@ const failure = require('./plots/failure.plot');
 describe('start->q1->q2->failure', () => {
   start();
   q1({ answer: '5050' });
-  q2({ answer: '10000' });
+  q2({ answer: '99999' });
   failure();
 });
