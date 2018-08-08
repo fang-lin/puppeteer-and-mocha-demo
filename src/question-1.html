@@ -4,9 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Apple</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="application/javascript" src="js/jquery.js"></script>
+    <script type="application/javascript">
+      $(() => {
+        $('#next').click(() => {
+          const answer = $('#answer-1').val();
+          window.location = answer === '5050' ? 'question-2.html' : 'failure.html';
+        });
+      });
+    </script>
+    <title>Question 1</title>
 </head>
 <body>
-<h1>Apple</h1>
+<h1>Question 1</h1>
+<div>
+    <label>1 + 2 + 3 + ... + 99 + 100 =</label>
+    <input type="number" placeholder="?" id="answer-1">
+</div>
+<button id="next">Next</button>
 </body>
 </html>
