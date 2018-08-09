@@ -1,9 +1,9 @@
-module.exports = () => {
+module.exports = ({ baseURL }) => {
 
-  it('url should correct', async () => {
-    await page.goto('http://localhost:8080');
+  it(`should open ${baseURL}`, async () => {
+    await page.goto(baseURL);
     const url = await page.url();
-    expect(url).to.equal('http://localhost:8080/');
+    expect(url).to.equal(`${baseURL}/`);
   });
 
   it('title should be "Start"', async () => {
@@ -11,12 +11,12 @@ module.exports = () => {
     const title = await page.$eval('h1', h1 => h1.innerText);
     expect(title).to.equal('Start');
     await page.screenshot({
-      path: `screenshots/start.plot.png`,
+      path: `screenshots/Start.plot.png`,
       fullPage: true
     });
   });
 
-  it('click "next" button', async () => {
+  it('click "Next" button', async () => {
     await page.waitFor('#next');
     const text = await page.$eval('#next', h1 => h1.innerText);
     expect(text).to.equal('Next');

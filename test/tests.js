@@ -1,14 +1,14 @@
 const { expect } = require('chai');
 const puppeteer = require('puppeteer');
-const _ = require('lodash');
-const globalVariables = _.pick(global, ['browser', 'expect']);
+const { pick } = require('lodash');
+const globalVariables = pick(global, ['browser', 'expect', 'page']);
 
 // puppeteer options
 const opts = {
-  headless: true,
+  headless: false,
   // slowMo: 20,
   ignoreHTTPSErrors: true,
-  timeout: 10000
+  timeout: 5000
 };
 
 // expose variables
@@ -24,4 +24,5 @@ after(() => {
 
   global.browser = globalVariables.browser;
   global.expect = globalVariables.expect;
+  global.page = globalVariables.page;
 });
