@@ -79,5 +79,6 @@ crashlytics.properties
 crashlytics-build.properties
 
 screenshots/
+.DS_Store
 
 
